@@ -1,0 +1,76 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+       <action name="login" class="Controller.Login.LoginAction">
+            <result name="success">ViewCourse.jsp</result>
+            <result name="fail">Invalid.jsp</result>
+        </action>
+        <action name="viewCourse" class="Controller.View.ViewCourseAction">
+            <result name="success">ViewCourse.jsp</result>
+        </action>
+        <action name="addForm" class="Controller.Add.AddCourseAction">
+            <result name="success">ViewCourse.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateCourse" class="Controller.Update.UpdateAction">
+            <result name="success">Update.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateForm" class="Controller.Update.UpdateAction" method="doUpdate">
+            <result name="success">ViewCourse.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="delete" class="Controller.Delete.DeleteCourseAction">
+            <result name="success">ViewCourse.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="detail" class="Controller.View.ViewCDetailAction">
+            <result name="success">ViewCourseDetail.jsp</result>
+        </action>
+        <action name="view" class="Controller.View.ViewTopicAction">
+            <result name="success">ViewTopic.jsp</result>
+        </action>
+        <action name="addTopic" class="Controller.Add.AddTopicAction">
+            <result name="success">ViewTopic.jsp</result>
+            <result name="fail">Fail.jsp</result>  
+        </action>
+         <action name="deleteTopic" class="Controller.Delete.DelTopicAction">
+            <result name="success" type="redirectAction">view</result>
+            <result name="fail">Fail.jsp</result>    
+        </action>
+        <action name="updateTopic" class="Controller.Update.UpdateTopicAction">
+            <result name="success">UpdateTopic.jsp</result>
+            <result name="fail">Fail.jsp</result>    
+        </action>
+        <action name="EditTop" class="Controller.Update.UpdateTopicAction" method="doUpdate">
+            <result name="success" type="redirectAction">view</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="addCate" class="Controller.Add.AddCateAction">
+            <result name="success" type="redirectAction">viewCate</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="deleteCategory" class="Controller.Delete.DeleteCategoryAction">
+            <result name="success" type="redirectAction">viewCate</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateCategory" class="Controller.Update.UpdateCateAction">
+            <result name="success">UpdateCategory.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="EditCategory" class="Controller.Update.UpdateCateAction" method="doUpdate">
+            <result name="success">ViewCate.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="detailCategory" class="Controller.View.ViewCateDetailAction">
+            <result name="success">ViewCateDetail.jsp</result>
+        </action>
+        <action name="viewCate" class="Controller.View.ViewCateAction">
+            <result name="success">ViewCate.jsp</result>
+        </action>
+    </package>
+</struts>
